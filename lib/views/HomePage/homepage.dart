@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:travelappui/components/appbar.dart';
 import 'package:travelappui/components/featuredcard.dart';
 import 'package:travelappui/constants/colors.dart';
 import 'package:travelappui/theme.dart';
@@ -26,30 +27,16 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       backgroundColor: kPrimaryColor,
-      appBar: AppBar(
-        title: Center(child: Text("Discover", style: TextStyle(fontWeight: FontWeight.w900, letterSpacing: 2),)),
-        leading: IconButton(
-          icon: Icon(Icons.menu),
-          onPressed: () {},
-        ),
-        actions: [
-          IconButton(
-              icon: Icon(
-                Icons.account_circle,
-                size: 36,
-              ),
-              onPressed: () {})
-        ],
-      ),
+      appBar: HomeAppBar,
       body: Container(
         child: Column(
           children: [
             Row(
               children: [
                 Container(
-                  margin: EdgeInsets.only(bottom: 12),
+                  margin: EdgeInsets.only(bottom: 4),
                   padding: EdgeInsets.only(left: 12, right: 12, top: 8),
-                  height: 42,
+                  height: 60,
                   width: size.width,
                   child: ListView.builder(
                       itemCount: kTopListLink.length,
@@ -89,6 +76,15 @@ class _HomePageState extends State<HomePage> {
                   itemBuilder: (context, index) {
                     return FeaturedCard();
                   }),
+            ),
+            Container(
+              margin: EdgeInsets.only(left:18,right:15),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                Text("Recommended", style: kAppTheme.textTheme.headline5,),
+                TextButton(onPressed: (){}, child: Text("View All"))
+              ],),
             )
           ],
         ),
