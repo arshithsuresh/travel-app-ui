@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:travelappui/views/HomePage/state/homepageStateProvider.dart';
 import './constants/constants.dart';
 import './views/HomePage/homepage.dart';
 import './theme.dart';
@@ -11,11 +13,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext csontext) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: kHomePageTitle,
-      theme: kAppTheme,
-      home: HomePage(),
+    return MultiProvider(providers: [
+      ChangeNotifierProvider(create: (_)=>HomePageStateProvider())
+    ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: kHomePageTitle,
+        theme: kAppTheme,
+        home: HomePage(),
+      ),
     );
   }
 }
