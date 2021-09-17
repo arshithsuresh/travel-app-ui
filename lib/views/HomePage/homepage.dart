@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:travelappui/components/appbar.dart';
 import 'package:travelappui/components/featuredcard.dart';
+import 'package:travelappui/components/travelplacedart.dart';
 import 'package:travelappui/constants/colors.dart';
 import 'package:travelappui/theme.dart';
 
@@ -28,7 +29,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: kPrimaryColor,
       appBar: HomeAppBar,
-      body: Container(
+      body: SingleChildScrollView(
         child: Column(
           children: [
             Row(
@@ -78,14 +79,38 @@ class _HomePageState extends State<HomePage> {
                   }),
             ),
             Container(
-              margin: EdgeInsets.only(left:18,right:15),
+              margin: EdgeInsets.only(left: 12, right: 12),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                Text("Recommended", style: kAppTheme.textTheme.headline5,),
-                TextButton(onPressed: (){}, child: Text("View All"))
-              ],),
-            )
+                  Text(
+                    "  Recommended",
+                    style: kAppTheme.textTheme.headline5,
+                  ),
+                  TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        "View All",
+                        style: kAppTheme.textTheme.headline6,
+                      ))
+                ],
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.all(16),
+              child: GridView.builder(
+                  itemCount: 10,
+                  shrinkWrap: true,
+                  primary: false,
+                  gridDelegate:
+                      SliverGridDelegateWithFixedCrossAxisCount(                          
+                          mainAxisSpacing: 16,
+                          crossAxisSpacing: 16,
+                          crossAxisCount: 2),
+                  itemBuilder: (context, index) {
+                    return TravelCard();
+                  }),
+            ),
           ],
         ),
       ),
