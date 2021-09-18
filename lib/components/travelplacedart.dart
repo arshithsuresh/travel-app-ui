@@ -13,7 +13,7 @@ Widget TravelCard() => Container(
             child: ClipRRect(          
               borderRadius: BorderRadius.circular(12),
               child: Image(
-                image: AssetImage('assets/image/pic2.jpg'),
+                image: AssetImage('assets/image/pic1.jpg'),
                 fit: BoxFit.cover,
               ),
             ),

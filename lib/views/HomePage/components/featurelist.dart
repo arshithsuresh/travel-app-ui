@@ -36,7 +36,7 @@ class _TopFeaturedListState extends State<TopFeaturedList> {
                                     TextStyle(fontWeight: FontWeight.bold, color: kAppTheme.accentColor))),
                           ),
                           onPressed: () {
-                            
+                               
                           },
                         );
 

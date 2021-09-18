@@ -52,7 +52,11 @@ class _HomePageState extends State<HomePage> {
                       shrinkWrap: true,
                       itemCount: 5,
                       itemBuilder: (context, index) {
-                        return FeaturedCard();
+                        return GestureDetector(
+                            onTap: () {
+                              Navigator.pushNamed(context, "/view");
+                            },
+                            child: FeaturedCard());
                       }),
                 ),
                 Container(
@@ -85,7 +89,10 @@ class _HomePageState extends State<HomePage> {
                           crossAxisCount: 2),
                       itemBuilder: (context, index) {
                         return GestureDetector(
-                            onTap: () {}, child: TravelCard());
+                            onTap: () {
+                              Navigator.pushNamed(context, "/view");
+                            },
+                            child: TravelCard());
                       }),
                 ),
               ],
@@ -99,7 +106,7 @@ class _HomePageState extends State<HomePage> {
                     right: 22,
                     left: 22,
                     child: Container(
-                      padding: EdgeInsets.only(left:12,right:12),
+                      padding: EdgeInsets.only(left: 12, right: 12),
                       decoration: BoxDecoration(
                           color: Colors.white,
                           boxShadow: [
@@ -114,11 +121,30 @@ class _HomePageState extends State<HomePage> {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                        IconButton(icon: Icon(Icons.home_rounded, size: 36, color: kAppTheme.accentColor), onPressed: (){}),
-                        IconButton(icon: Icon(Icons.calendar_today_rounded, size: 36, color: kAppTheme.accentColor.withOpacity(0.35)), onPressed: (){}),
-                        IconButton(icon: Icon(Icons.search, size: 36, color: kAppTheme.accentColor.withOpacity(0.35)), onPressed: (){}),
-                        IconButton(icon: Icon(Icons.person, size: 36, color: kAppTheme.accentColor.withOpacity(0.35)),onPressed: (){})
-                      ],),
+                          IconButton(
+                              icon: Icon(Icons.home_rounded,
+                                  size: 36, color: kAppTheme.accentColor),
+                              onPressed: () {}),
+                          IconButton(
+                              icon: Icon(Icons.calendar_today_rounded,
+                                  size: 36,
+                                  color:
+                                      kAppTheme.accentColor.withOpacity(0.35)),
+                              onPressed: () {}),
+                          IconButton(
+                              icon: Icon(Icons.search,
+                                  size: 36,
+                                  color:
+                                      kAppTheme.accentColor.withOpacity(0.35)),
+                              onPressed: () {}),
+                          IconButton(
+                              icon: Icon(Icons.person,
+                                  size: 36,
+                                  color:
+                                      kAppTheme.accentColor.withOpacity(0.35)),
+                              onPressed: () {})
+                        ],
+                      ),
                     ));
               })
         ],

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget Rating({double rating}) {
+Widget Rating({double rating, Color color:Colors.white}) {
   return Container(
     padding: EdgeInsets.zero,
     margin: EdgeInsets.zero,
@@ -29,7 +29,7 @@ Widget Rating({double rating}) {
         Text(
           rating.toString(),
           style: TextStyle(
-              color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
+              color: color, fontSize: 14, fontWeight: FontWeight.bold),
         )
       ],
     ),

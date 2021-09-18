@@ -64,7 +64,9 @@ class _FeaturedCardState extends State<FeaturedCard> {
                                 Icons.favorite_rounded,
                                 color: kAppTheme.primaryColor,
                               ),
-                              onPressed: () {})
+                              onPressed: () {
+
+                              })
                         ],
                       ),
                     ),

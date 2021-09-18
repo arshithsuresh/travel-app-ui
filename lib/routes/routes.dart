@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:travelappui/views/HomePage/homepage.dart';
 import 'package:travelappui/views/SplashScreen/splashscreen.dart';
+import 'package:travelappui/views/ViewDetails/viewDetails.dart';
 
 class AppRoutes {
 
@@ -25,7 +26,7 @@ class AppRoutes {
         break;
       case ROUTE_ViewDetails:
           return MaterialPageRoute(
-            settings: settings, builder: (_) => HomePage());
+            settings: settings, builder: (_) => ViewDetails());
         break;
       case ROUTE_Login:
           return MaterialPageRoute(
