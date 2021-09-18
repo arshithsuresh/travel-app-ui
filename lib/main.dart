@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:travelappui/views/HomePage/state/homepageStateProvider.dart';
+import 'package:travelappui/views/SplashScreen/splashscreen.dart';
 import './constants/constants.dart';
 import './views/HomePage/homepage.dart';
 import './theme.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: kHomePageTitle,
         theme: kAppTheme,
-        home: HomePage(),
+        home: SplashScreen(),
       ),
     );
   }

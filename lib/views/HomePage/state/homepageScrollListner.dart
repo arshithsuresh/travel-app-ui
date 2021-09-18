@@ -6,7 +6,7 @@ class HomepageSrollListner extends ChangeNotifier{
   double bottom = 22;
   double _last = 0;
 
-  HomepageSrollListner.initialise(ScrollController controller, [double height = 112]){
+  HomepageSrollListner.initialise(ScrollController controller, [double height = 75]){
 
     controller.addListener(() {
       final current = controller.offset;
@@ -15,7 +15,8 @@ class HomepageSrollListner extends ChangeNotifier{
       if(bottom >=22 )bottom = 22;
 
       _last = current;
-      if (bottom <=22 && bottom >-height) notifyListeners();
+      if (bottom <=22 && bottom >-height)
+        notifyListeners();
       
      });
 

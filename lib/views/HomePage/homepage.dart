@@ -108,14 +108,14 @@ class _HomePageState extends State<HomePage> {
                                 color: Colors.black.withOpacity(0.4))
                           ],
                           borderRadius: BorderRadius.circular(45)),
-                      height: 90,
+                      height: 75,
                       alignment: Alignment.center,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                        IconButton(icon: Icon(Icons.home, size: 36, color: kAppTheme.accentColor), onPressed: (){}),
-                        IconButton(icon: Icon(Icons.calendar_today_sharp, size: 36, color: kAppTheme.accentColor.withOpacity(0.35)), onPressed: (){}),
+                        IconButton(icon: Icon(Icons.home_rounded, size: 36, color: kAppTheme.accentColor), onPressed: (){}),
+                        IconButton(icon: Icon(Icons.calendar_today_rounded, size: 36, color: kAppTheme.accentColor.withOpacity(0.35)), onPressed: (){}),
                         IconButton(icon: Icon(Icons.search, size: 36, color: kAppTheme.accentColor.withOpacity(0.35)), onPressed: (){}),
                         IconButton(icon: Icon(Icons.person, size: 36, color: kAppTheme.accentColor.withOpacity(0.35)),onPressed: (){})
                       ],),
