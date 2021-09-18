@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travelappui/constants/colors.dart';
+import 'package:travelappui/routes/routes.dart';
 import 'package:travelappui/theme.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -54,7 +55,9 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
               SizedBox(height: 18),
               ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, AppRoutes.ROUTE_Home);
+                  },
                   style: ElevatedButton.styleFrom(
                       primary: appTheme.accentColor,
                       shape: RoundedRectangleBorder(

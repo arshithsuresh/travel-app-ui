@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:travelappui/routes/routes.dart';
 import 'package:travelappui/views/HomePage/state/homepageStateProvider.dart';
 import 'package:travelappui/views/SplashScreen/splashscreen.dart';
 import './constants/constants.dart';
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: kHomePageTitle,
         theme: kAppTheme,
-        home: SplashScreen(),
+        initialRoute: AppRoutes.ROUTE_Initial,
+        onGenerateRoute: AppRoutes.generateRoutes,
       ),
     );
   }

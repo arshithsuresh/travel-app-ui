@@ -12,8 +12,7 @@ ThemeData kAppTheme = ThemeData(
   ),
   fontFamily: 'PlayFair',
   
-  textTheme: TextTheme(
-     
+  textTheme: TextTheme(     
      headline1: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 34,),
      headline3: TextStyle(color: kPrimaryColor, fontWeight: FontWeight.bold, fontSize: 20 ), 
      headline4: TextStyle(color: Colors.black, fontWeight: FontWeight.w400, fontSize: 13, fontFamily: 'Roboto'),
