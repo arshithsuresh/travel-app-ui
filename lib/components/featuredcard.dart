@@ -2,9 +2,15 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:travelappui/components/rating,.dart';
+import 'package:travelappui/models/placesModel.dart';
 import 'package:travelappui/theme.dart';
 
 class FeaturedCard extends StatefulWidget {
+
+  PlaceModel placeModel;
+
+  FeaturedCard({this.placeModel});
+
   @override
   _FeaturedCardState createState() => _FeaturedCardState();
 }
@@ -14,11 +20,13 @@ class _FeaturedCardState extends State<FeaturedCard> {
   String title;
   bool favorite;
 
+  
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     ThemeData appTheme = Theme.of(context);
-
+    
     return Container(
         width: size.width * 0.85,
         height: max(200, size.height * 0.32),
@@ -30,10 +38,11 @@ class _FeaturedCardState extends State<FeaturedCard> {
           children: [
             Container(
               height: double.maxFinite,
-              child: ClipRRect(
+              width: double.maxFinite,
+              child: ClipRRect(                
                 borderRadius: BorderRadius.circular(18),
                 child: Image(
-                  image: AssetImage('assets/image/pic1.jpg'),
+                  image: AssetImage(widget.placeModel.imgUrl),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -56,7 +65,7 @@ class _FeaturedCardState extends State<FeaturedCard> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            "Northen Mountains",
+                            widget.placeModel.placeTitle,
                             style: kAppTheme.textTheme.headline3,
                           ),
                           IconButton(
@@ -72,7 +81,7 @@ class _FeaturedCardState extends State<FeaturedCard> {
                     ),
                     Container(
                       child: Row(
-                        children: [Rating(rating: 3.5)],
+                        children: [Rating(rating: widget.placeModel.rating)],
                       ),
                     )
                   ],

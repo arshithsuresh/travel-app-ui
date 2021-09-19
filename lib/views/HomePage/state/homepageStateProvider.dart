@@ -1,10 +1,13 @@
 
 import 'package:flutter/material.dart';
+import 'package:travelappui/models/placesModel.dart';
+import 'package:travelappui/utils/restAPI.dart';
 
 class HomePageStateProvider extends ChangeNotifier
 {
 
   bool showBottomDrawer = true;
+  RESTAPI api = RESTAPI();
 
   void setShowBottomDrawer(bool value){
     this.showBottomDrawer = value;
@@ -21,6 +24,14 @@ class HomePageStateProvider extends ChangeNotifier
     'Canada',
     'Australia'
   ];
+
+  Future<List<PlaceModel>> getFeaturedPlaces() async {
+    return await api.getFeaturedPlaces();    
+  }
+
+  Future<List<PlaceModel>> getAllPlaces() async {
+    return await api.getAllPlaces();    
+  }
 
   Future<void> GetTopList() async {
 

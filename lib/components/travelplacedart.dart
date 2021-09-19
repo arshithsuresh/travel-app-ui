@@ -2,9 +2,10 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:travelappui/components/rating,.dart';
+import 'package:travelappui/models/placesModel.dart';
 import 'package:travelappui/theme.dart';
 
-Widget TravelCard() => Container(
+Widget TravelCard(PlaceModel placeModel) => Container(
       
       child: Stack(
         children: [
@@ -13,7 +14,7 @@ Widget TravelCard() => Container(
             child: ClipRRect(          
               borderRadius: BorderRadius.circular(12),
               child: Image(
-                image: AssetImage('assets/image/pic1.jpg'),
+                image: AssetImage(placeModel.imgUrl),
                 fit: BoxFit.cover,
               ),
             ),
@@ -43,12 +44,12 @@ Widget TravelCard() => Container(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Northen Mountains",
+                    placeModel.placeTitle,
                     style: kAppTheme.textTheme.subtitle1,
                   ),
                   Row(
                     children: [
-                     Rating(rating: (Random().nextDouble()*5).truncateToDouble())
+                     Rating(rating: placeModel.rating)
                     ],
                   )
                 ],

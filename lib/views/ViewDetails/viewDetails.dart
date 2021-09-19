@@ -133,7 +133,7 @@ class _ViewDetailsState extends State<ViewDetails> {
                       overflow: TextOverflow.fade,
                       style: appTheme.textTheme.bodyText1,
                     ),
-                    SizedBox(height: 36),
+                    SizedBox(height: size.height*0.02),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
